@@ -1,0 +1,425 @@
+<html><head><script src='http://transp-or.epfl.ch/biogeme/sorttable.js'></script><meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><title>ML_12 - Report from biogeme 3.2.5 [2020-05-08]</title><meta name='keywords' content='biogeme, discrete choice, random utility'><meta name='description' content='Report from biogeme 3.2.5 [2020-05-08]'><meta name='author' content='Michel Bierlaire'><style type=text/css>.biostyle	{font-size:10.0pt;	font-weight:400;	font-style:normal;	font-family:Courier;}.boundstyle	{font-size:10.0pt;	font-weight:400;	font-style:normal;	font-family:Courier;        color:red}</style></head><body bgcolor='#ffffff'><p>biogeme 3.2.5 [2020-05-08]</p>
+<p><a href='https://www.python.org/' target='_blank'>Python</a> package</p>
+<p>Home page: <a href='http://biogeme.epfl.ch' target='_blank'>http://biogeme.epfl.ch</a></p>
+<p>Submit questions to <a href='https://groups.google.com/d/forum/biogeme' target='_blank'>https://groups.google.com/d/forum/biogeme</a></p>
+<p><a href='http://people.epfl.ch/michel.bierlaire'>Michel Bierlaire</a>, <a href='http://transp-or.epfl.ch'>Transport and Mobility Laboratory</a>, <a href='http://www.epfl.ch'>Ecole Polytechnique F&#233;d&#233;rale de Lausanne (EPFL)</a></p>
+<p>This file has automatically been generated on 2020-05-08 04:26:17.909461</p>
+<p>If you drag this HTML file into the Calc application of <a href='http://www.openoffice.org/' target='_blank'>OpenOffice</a>, or the spreadsheet of <a href='https://www.libreoffice.org/' target='_blank'>LibreOffice</a>, you will be able to perform additional calculations.</p>
+<table>
+<tr class=biostyle><td align=right><strong>Report file</strong>:	</td><td>ML_12.html</td></tr>
+<tr class=biostyle><td align=right><strong>Database name</strong>:	</td><td>swissmetro</td></tr>
+</table>
+<h1>Estimation report</h1>
+<table border='0'>
+<tr class=biostyle><td align=right ><strong>Number of estimated parameters</strong>: </td> <td>27</td></tr>
+<tr class=biostyle><td align=right ><strong>Sample size</strong>: </td> <td>1188</td></tr>
+<tr class=biostyle><td align=right ><strong>Observations</strong>: </td> <td>10692</td></tr>
+<tr class=biostyle><td align=right ><strong>Excluded observations</strong>: </td> <td>0</td></tr>
+<tr class=biostyle><td align=right ><strong>Init log likelihood</strong>: </td> <td>-9950.073</td></tr>
+<tr class=biostyle><td align=right ><strong>Final log likelihood</strong>: </td> <td>-5741.332</td></tr>
+<tr class=biostyle><td align=right ><strong>Likelihood ratio test for the init. model</strong>: </td> <td>8417.482</td></tr>
+<tr class=biostyle><td align=right ><strong>Rho-square for the init. model</strong>: </td> <td>0.423</td></tr>
+<tr class=biostyle><td align=right ><strong>Rho-square-bar for the init. model</strong>: </td> <td>0.42</td></tr>
+<tr class=biostyle><td align=right ><strong>Akaike Information Criterion</strong>: </td> <td>11536.66</td></tr>
+<tr class=biostyle><td align=right ><strong>Bayesian Information Criterion</strong>: </td> <td>11673.82</td></tr>
+<tr class=biostyle><td align=right ><strong>Final gradient norm</strong>: </td> <td>1.9893E-04</td></tr>
+<tr class=biostyle><td align=right ><strong>Diagnostic</strong>: </td> <td>b'CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL'</td></tr>
+<tr class=biostyle><td align=right ><strong>Database readings</strong>: </td> <td>3376</td></tr>
+<tr class=biostyle><td align=right ><strong>Iterations</strong>: </td> <td>3066</td></tr>
+<tr class=biostyle><td align=right ><strong>Number of draws</strong>: </td> <td>100</td></tr>
+<tr class=biostyle><td align=right ><strong>Draws generation time</strong>: </td> <td>0:00:00.271061</td></tr>
+<tr class=biostyle><td align=right ><strong>Types of draws</strong>: </td> <td>['BETA_COST_random: NORMAL]', 'BETA_COST_random_Norm: NORMAL]', 'BETA_HE_random: NORMAL]', 'BETA_HE_random_Norm: NORMAL]', 'BETA_TIME_TRAIN_random: NORMAL]', 'BETA_TIME_TRAIN_random_Norm: NORMAL]', 'BETA_TIME_SM_random: NORMAL]', 'BETA_TIME_SM_random_Norm: NORMAL]', 'BETA_TIME_CAR_random: NORMAL]', 'BETA_TIME_CAR_random_Norm: NORMAL]']</td></tr>
+<tr class=biostyle><td align=right ><strong>Optimization time</strong>: </td> <td>1:04:12.868408</td></tr>
+<tr class=biostyle><td align=right ><strong>Nbr of threads</strong>: </td> <td>32</td></tr>
+</table>
+<h1>Estimated parameters</h1>
+<p><font size='-1'>Click on the headers of the columns to sort the table  [<a href='http://www.kryogenix.org/code/browser/sorttable/' target='_blank'>Credits</a>]</font></p>
+<table border='1' class='sortable'>
+<tr class=biostyle><th>Name</th><th>Value</th><th>Std err</th><th>t-test</th><th>p-value</th><th>Rob. Std err</th><th>Rob. t-test</th><th>Rob. p-value</th></tr>
+<tr class=biostyle><td>ASC_SM</td><td>-4.44</td><td>1.8e+308</td><td>-2.47e-308</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>ASC_TRAIN</td><td>4.85</td><td>1.8e+308</td><td>2.7e-308</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_COST_mean</td><td>1.89</td><td>1.8e+308</td><td>1.05e-308</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_COST_std</td><td>1.24</td><td>1.8e+308</td><td>6.89e-309</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_HE_mean_Norm</td><td>-1.45</td><td>1.8e+308</td><td>-8.08e-309</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_HE_std_Norm</td><td>1.3</td><td>1.8e+308</td><td>7.23e-309</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_mean</td><td>3.04</td><td>1.8e+308</td><td>1.69e-308</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_std</td><td>0.143</td><td>1.8e+308</td><td>7.98e-310</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_mean_Norm</td><td>-28.9</td><td>1.8e+308</td><td>-1.61e-307</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_std_Norm</td><td>2.84</td><td>1.8e+308</td><td>1.58e-308</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_3_TRAIN</td><td>-3.23</td><td>-0</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_4_SM</td><td>-0.976</td><td>-0</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_SM</td><td>-2.78</td><td>-0</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_TRAIN</td><td>-1.02</td><td>-0</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>-0.706</td><td>-0</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>-2.44</td><td>-0</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>0.798</td><td>1.8e+308</td><td>4.44e-309</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>0.744</td><td>1.8e+308</td><td>4.14e-309</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>2.55</td><td>-0</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>0.667</td><td>1.8e+308</td><td>3.71e-309</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>2.6</td><td>-0</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>0.618</td><td>-0</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>-0.967</td><td>1.8e+308</td><td>-5.38e-309</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>2.94</td><td>-0</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>-24.6</td><td>1.8e+308</td><td>-1.37e-307</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>0.442</td><td>1.8e+308</td><td>2.46e-309</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>0.217</td><td>1.8e+308</td><td>1.21e-309</td><td>1</td><td>0</td><td>1.8e+308</td><td>0</td></tr>
+</table>
+<h2>Correlation of coefficients</h2>
+<p><font size='-1'>Click on the headers of the columns to sort the table [<a href='http://www.kryogenix.org/code/browser/sorttable/' target='_blank'>Credits</a>]</font></p>
+<table border='1' class='sortable'>
+<tr class=biostyle><th>Coefficient1</th><th>Coefficient2</th><th>Covariance</th><th>Correlation</th><th>t-test</th><th>p-value</th><th>Rob. cov.</th><th>Rob. corr.</th><th>Rob. t-test</th><th>Rob. p-value</th></tr>
+<tr class=biostyle><td>ASC_TRAIN</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_COST_mean</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_COST_mean</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_COST_std</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_COST_std</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_COST_std</td><td>BETA_COST_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_HE_mean_Norm</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_HE_mean_Norm</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_HE_mean_Norm</td><td>BETA_COST_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_HE_mean_Norm</td><td>BETA_COST_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_HE_std_Norm</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_HE_std_Norm</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_HE_std_Norm</td><td>BETA_COST_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_HE_std_Norm</td><td>BETA_COST_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_HE_std_Norm</td><td>BETA_HE_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_mean</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_mean</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_mean</td><td>BETA_COST_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_mean</td><td>BETA_COST_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_mean</td><td>BETA_HE_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_mean</td><td>BETA_HE_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_std</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_std</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_std</td><td>BETA_COST_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_std</td><td>BETA_COST_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_std</td><td>BETA_HE_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_std</td><td>BETA_HE_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_SM_std</td><td>BETA_TIME_SM_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_mean_Norm</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_mean_Norm</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_mean_Norm</td><td>BETA_COST_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_mean_Norm</td><td>BETA_COST_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_mean_Norm</td><td>BETA_HE_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_mean_Norm</td><td>BETA_HE_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_mean_Norm</td><td>BETA_TIME_SM_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_mean_Norm</td><td>BETA_TIME_SM_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_std_Norm</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_std_Norm</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_std_Norm</td><td>BETA_COST_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_std_Norm</td><td>BETA_COST_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_std_Norm</td><td>BETA_HE_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_std_Norm</td><td>BETA_HE_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_std_Norm</td><td>BETA_TIME_SM_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_std_Norm</td><td>BETA_TIME_SM_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>BETA_TIME_TRAIN_std_Norm</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_3_TRAIN</td><td>ASC_SM</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_3_TRAIN</td><td>ASC_TRAIN</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_3_TRAIN</td><td>BETA_COST_mean</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_3_TRAIN</td><td>BETA_COST_std</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_3_TRAIN</td><td>BETA_HE_mean_Norm</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_3_TRAIN</td><td>BETA_HE_std_Norm</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_3_TRAIN</td><td>BETA_TIME_SM_mean</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_3_TRAIN</td><td>BETA_TIME_SM_std</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_3_TRAIN</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_3_TRAIN</td><td>BETA_TIME_TRAIN_std_Norm</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_4_SM</td><td>ASC_SM</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_4_SM</td><td>ASC_TRAIN</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_4_SM</td><td>BETA_COST_mean</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_4_SM</td><td>BETA_COST_std</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_4_SM</td><td>BETA_HE_mean_Norm</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_4_SM</td><td>BETA_HE_std_Norm</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_4_SM</td><td>BETA_TIME_SM_mean</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_4_SM</td><td>BETA_TIME_SM_std</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_4_SM</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_4_SM</td><td>BETA_TIME_TRAIN_std_Norm</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_4_SM</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_SM</td><td>ASC_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_SM</td><td>ASC_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_SM</td><td>BETA_COST_mean</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_SM</td><td>BETA_COST_std</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_SM</td><td>BETA_HE_mean_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_SM</td><td>BETA_HE_std_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_SM</td><td>BETA_TIME_SM_mean</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_SM</td><td>BETA_TIME_SM_std</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_SM</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_SM</td><td>BETA_TIME_TRAIN_std_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_SM</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_SM</td><td>B_AGE_4_SM</td><td>-6.95e-310</td><td>1.8e+308</td><td>-4.85e+154</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_TRAIN</td><td>ASC_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_TRAIN</td><td>ASC_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_TRAIN</td><td>BETA_COST_mean</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_TRAIN</td><td>BETA_COST_std</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_TRAIN</td><td>BETA_HE_mean_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_TRAIN</td><td>BETA_HE_std_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_TRAIN</td><td>BETA_TIME_SM_mean</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_TRAIN</td><td>BETA_TIME_SM_std</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_TRAIN</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_TRAIN</td><td>BETA_TIME_TRAIN_std_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_TRAIN</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_TRAIN</td><td>B_AGE_4_SM</td><td>-6.95e-310</td><td>1.8e+308</td><td>-1.18e+153</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_5_TRAIN</td><td>B_AGE_5_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>ASC_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>ASC_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>BETA_COST_mean</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>BETA_COST_std</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>BETA_HE_mean_Norm</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>BETA_HE_std_Norm</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>BETA_TIME_SM_mean</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>BETA_TIME_SM_std</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>BETA_TIME_TRAIN_std_Norm</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>B_AGE_4_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>B_AGE_5_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_ADULTS_SM</td><td>B_AGE_5_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>ASC_SM</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>ASC_TRAIN</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>BETA_COST_mean</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>BETA_COST_std</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>BETA_HE_mean_Norm</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>BETA_HE_std_Norm</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>BETA_TIME_SM_mean</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>BETA_TIME_SM_std</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>BETA_TIME_TRAIN_std_Norm</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>B_AGE_4_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>B_AGE_5_SM</td><td>-6.95e-310</td><td>1.8e+308</td><td>9.16e+153</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>B_AGE_5_TRAIN</td><td>-6.95e-310</td><td>1.8e+308</td><td>-3.81e+154</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_AGE_TRAIN_ADULTS</td><td>B_AGE_ADULTS_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>BETA_COST_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>BETA_COST_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>BETA_HE_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>BETA_HE_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>BETA_TIME_SM_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>BETA_TIME_SM_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>BETA_TIME_TRAIN_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>B_AGE_4_SM</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>B_AGE_5_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>B_AGE_5_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>B_AGE_ADULTS_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_SM</td><td>B_AGE_TRAIN_ADULTS</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>BETA_COST_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>BETA_COST_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>BETA_HE_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>BETA_HE_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>BETA_TIME_SM_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>BETA_TIME_SM_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>BETA_TIME_TRAIN_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>B_AGE_4_SM</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>B_AGE_5_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>B_AGE_5_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>B_AGE_ADULTS_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>B_AGE_TRAIN_ADULTS</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_BUSINESS_TRAIN</td><td>B_BUSINESS_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>ASC_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>ASC_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>BETA_COST_mean</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>BETA_COST_std</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>BETA_HE_mean_Norm</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>BETA_HE_std_Norm</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>BETA_TIME_SM_mean</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>BETA_TIME_SM_std</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>BETA_TIME_TRAIN_std_Norm</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>B_AGE_4_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>B_AGE_5_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>B_AGE_5_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>B_AGE_ADULTS_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>B_AGE_TRAIN_ADULTS</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>B_BUSINESS_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_COMMUTER</td><td>B_BUSINESS_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>BETA_COST_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>BETA_COST_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>BETA_HE_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>BETA_HE_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>BETA_TIME_SM_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>BETA_TIME_SM_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>BETA_TIME_TRAIN_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>B_AGE_4_SM</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>B_AGE_5_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>B_AGE_5_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>B_AGE_ADULTS_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>B_AGE_TRAIN_ADULTS</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>B_BUSINESS_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>B_BUSINESS_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_FIRST_SM</td><td>B_COMMUTER</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>ASC_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>ASC_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>BETA_COST_mean</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>BETA_COST_std</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>BETA_HE_mean_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>BETA_HE_std_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>BETA_TIME_SM_mean</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>BETA_TIME_SM_std</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>BETA_TIME_TRAIN_std_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>B_AGE_4_SM</td><td>-6.95e-310</td><td>1.8e+308</td><td>9.59e+154</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>B_AGE_5_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>B_AGE_5_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>B_AGE_ADULTS_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>B_AGE_TRAIN_ADULTS</td><td>-6.95e-310</td><td>1.8e+308</td><td>1.35e+155</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>B_BUSINESS_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>B_BUSINESS_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>B_COMMUTER</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_GA_TRAIN</td><td>B_FIRST_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>ASC_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>ASC_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>BETA_COST_mean</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>BETA_COST_std</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>BETA_HE_mean_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>BETA_HE_std_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>BETA_TIME_SM_mean</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>BETA_TIME_SM_std</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>BETA_TIME_TRAIN_std_Norm</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>B_AGE_4_SM</td><td>-6.95e-310</td><td>1.8e+308</td><td>4.28e+154</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>B_AGE_5_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>B_AGE_5_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>B_AGE_ADULTS_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>B_AGE_TRAIN_ADULTS</td><td>-6.95e-310</td><td>1.8e+308</td><td>8.21e+154</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>B_BUSINESS_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>B_BUSINESS_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>B_COMMUTER</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>B_FIRST_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_LUGGAGE_TRAIN</td><td>B_GA_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>BETA_COST_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>BETA_COST_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>BETA_HE_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>BETA_HE_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>BETA_TIME_SM_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>BETA_TIME_SM_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>BETA_TIME_TRAIN_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>B_AGE_4_SM</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>B_AGE_5_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>B_AGE_5_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>B_AGE_ADULTS_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>B_AGE_TRAIN_ADULTS</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>B_BUSINESS_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>B_BUSINESS_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>B_COMMUTER</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>B_FIRST_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>B_GA_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_MALE_TRAIN</td><td>B_LUGGAGE_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>ASC_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>ASC_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>BETA_COST_mean</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>BETA_COST_std</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>BETA_HE_mean_Norm</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>BETA_HE_std_Norm</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>BETA_TIME_SM_mean</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>BETA_TIME_SM_std</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>BETA_TIME_TRAIN_std_Norm</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>B_AGE_4_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>B_AGE_5_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>B_AGE_5_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>B_AGE_ADULTS_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>B_AGE_TRAIN_ADULTS</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>B_BUSINESS_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>B_BUSINESS_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>B_COMMUTER</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>B_FIRST_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>B_GA_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>B_LUGGAGE_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_PRIVATE</td><td>B_MALE_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>BETA_COST_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>BETA_COST_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>BETA_HE_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>BETA_HE_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>BETA_TIME_SM_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>BETA_TIME_SM_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>BETA_TIME_TRAIN_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>B_AGE_4_SM</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>B_AGE_5_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>B_AGE_5_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>B_AGE_ADULTS_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>B_AGE_TRAIN_ADULTS</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>B_BUSINESS_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>B_BUSINESS_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>B_COMMUTER</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>B_FIRST_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>B_GA_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>B_LUGGAGE_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>B_MALE_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>B_TIME_CAR</td><td>B_PRIVATE</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>BETA_COST_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>BETA_COST_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>BETA_HE_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>BETA_HE_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>BETA_TIME_SM_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>BETA_TIME_SM_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>BETA_TIME_TRAIN_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_AGE_4_SM</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_AGE_5_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_AGE_5_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_AGE_ADULTS_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_AGE_TRAIN_ADULTS</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_BUSINESS_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_BUSINESS_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_COMMUTER</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_FIRST_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_GA_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_LUGGAGE_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_MALE_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_PRIVATE</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_COST</td><td>B_TIME_CAR</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>ASC_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>ASC_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>BETA_COST_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>BETA_COST_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>BETA_HE_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>BETA_HE_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>BETA_TIME_SM_mean</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>BETA_TIME_SM_std</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>BETA_TIME_TRAIN_mean_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>BETA_TIME_TRAIN_std_Norm</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_AGE_3_TRAIN</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_AGE_4_SM</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_AGE_5_SM</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_AGE_5_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_AGE_ADULTS_SM</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_AGE_TRAIN_ADULTS</td><td>1.64e-310</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_BUSINESS_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_BUSINESS_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_COMMUTER</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_FIRST_SM</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_GA_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_LUGGAGE_TRAIN</td><td>8.18e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_MALE_TRAIN</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_PRIVATE</td><td>-0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>B_TIME_CAR</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+<tr class=biostyle><td>q_TIME</td><td>q_COST</td><td>-1.92e-311</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td><td>0</td><td>1.8e+308</td><td>1.8e+308</td><td>0</td></tr>
+</table>
+<p>Smallest eigenvalue: -inf</p>
+<p>Smallest singular value: 6.71208e+292</p>
+</html>
