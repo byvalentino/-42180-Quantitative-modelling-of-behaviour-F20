@@ -19,6 +19,10 @@ import biogeme.draws as draws
 from scipy.stats import chi2
 from scipy.stats import norm
 import math
+import seaborn as sn
+from IPython.display import Math, HTML
+
+
 
 def likeRatioTest(restr_betas, unrestr_betas, restr_LL, unrestr_LL, name_unrestricted, name_restricted, prob = 0.95):
     '''
@@ -44,16 +48,26 @@ def likeRatioTest(restr_betas, unrestr_betas, restr_LL, unrestr_LL, name_unrestr
         
     if abs(stat) >= critical:
         print('Chose Unrestricted (reject H0 the parameters of the unrestricted model are 0)')
-        display(Markdown('### LL Ratio Test Result (abs(STAT)-CHI2)'+str(abs(stat) - critical)))
+        display(Markdown(f'### LL Ratio Test Result (abs(STAT)-CHI2): {abs(stat) - critical}'))
         return name_unrestricted
     else:
         print('Chose Restricted (fail to reject H0 the parameters of the unrestricted model are 0)')
-        display(Markdown('### LL ratio test result '+str(abs(stat) - critical)))
+        display(Markdown(f'### LL ratio test result: {abs(stat) - critical}'))
         return name_restricted
     
 # Perform Horowitz Test performed as BenAkiva-Swait
 
-def BenAkivaSwaitHorowitzTest(unrestr_betas, restr_betas, N, J, rh0bs_U, rh0bs_R, name_unrestricted, name_restricted, threshold=0.07):
+
+
+def BenAkivaSwaitHorowitzTest(unrestr_betas
+                              , restr_betas
+                              , N
+                              , J
+                              , rh0bs_U
+                              , rh0bs_R
+                              , name_unrestricted
+                              , name_restricted
+                              , threshold=0.07):
     '''
     Test for NON Nested Hypotheses
     Ben-Akiva p.171-172
@@ -66,7 +80,10 @@ def BenAkivaSwaitHorowitzTest(unrestr_betas, restr_betas, N, J, rh0bs_U, rh0bs_R
     unrestr_betas = number of parameters of the unrestricted model
     restr_betas = number of parameters of the restricted model
     '''
-    if rh0bs_U - rh0bs_R >=0:
+    #print(name_restricted,rh0bs_R)#ML_2
+    #print(name_unrestricted,rh0bs_U)#ML_3
+    
+    if rh0bs_U > rh0bs_R:
         n=1
     else:
         n=-1
@@ -77,30 +94,32 @@ def BenAkivaSwaitHorowitzTest(unrestr_betas, restr_betas, N, J, rh0bs_U, rh0bs_R
     try:
         Pr = norm.cdf(-math.sqrt(2*N*z*math.log(J) + dof), loc=0, scale=1)
         #print(Pr)
+        
         prdiff = Pr-threshold
+        
         if prdiff<0 and n==1:
-            print('Probability that the unrestricted model is false having greater rho bar squere, is below threshold:')
-            print('Threshold:'+str(threshold))
-            print('Probability:'+str(Pr))
-            print('Difference:'+str(Pr-threshold))
+            print(f'### Probability that {name_unrestricted} is false having greater rho bar squere, is below threshold:')
+            print(f'Threshold:'+str(threshold))
+            print(f'Probability:'+str(Pr))
+            print(f'Difference:'+str(Pr-threshold))
             return name_unrestricted
         if prdiff>=0 and n==1:
-            print('Probability that the unrestricted model is false having greater rho bar squere, is above threshold:')
-            print('Threshold:'+str(threshold))
-            print('Probability:'+str(Pr))
-            print('Difference:'+str(Pr-threshold))            
+            print(f'### Probability that {name_restricted} is false having greater rho bar squere, is above threshold:')
+            print(f'Threshold:'+str(threshold))
+            print(f'Probability:'+str(Pr))
+            print(f'Difference:'+str(Pr-threshold))            
             return name_restricted
         if prdiff<0 and n==-1:
-            print('Probability that the restricted model is false having greater rho bar squere, is below threshold:')
-            print('Threshold:'+str(threshold))
-            print('Probability:'+str(Pr))
-            print('Difference:'+str(Pr-threshold))
+            print(f'### Probability that {name_restricted} is false having greater rho bar squere, is below threshold:')
+            print(f'Threshold:'+str(threshold))
+            print(f'Probability:'+str(Pr))
+            print(f'Difference:'+str(Pr-threshold))
             return name_restricted
         if prdiff>=0 and n==-1:
-            print('Probability that the restricted model is false having greater rho bar squere, is above threshold:')
-            print('Threshold:'+str(threshold))
-            print('Probability:'+str(Pr))
-            print('Difference:'+str(Pr-threshold))
+            print(f'### Probability that {name_unrestricted} is false having greater rho bar squere, is above threshold:')
+            print(f'Threshold:'+str(threshold))
+            print(f'Probability:'+str(Pr))
+            print(f'Difference:'+str(Pr-threshold))
             return name_unrestricted
 
     except:
@@ -113,7 +132,9 @@ def BenAkivaSwaitHorowitzTest(unrestr_betas, restr_betas, N, J, rh0bs_U, rh0bs_R
         
         #print(Pr,z)
 
-def print_result(results, database):
+        
+        
+def print_result(results, database, PlotVarCovar=True):
     '''
     print 
     Loglikelihood
@@ -131,20 +152,29 @@ def print_result(results, database):
         print(f"BIC = {2*r.getEstimatedParameters().shape[0]*math.log(database.getNumberOfObservations()) - 2*r.data.logLike}")
         print(f"rho bar square = {r.data.rhoBarSquare:.3g}")
         #print(f"Output file: {results.data.htmlFileName}")
+        if PlotVarCovar:
+            display(Markdown(f"# Variance Covariance Matrix"))
+            sn.heatmap(r.data.varCovar, annot=True, fmt='g')
+            plt.show()
+
     if len(results) > 1:
         display(Markdown(f"### Diff. LL(beta) {results[-1].data.modelName} > {results[-2].data.modelName} <- {results[-1].data.logLike > results[-2].data.logLike}"))
         print('***************')
         print('***************')
         display(Markdown(f"### Diff. rho bar square {results[-1].data.modelName} > {results[-2].data.modelName} <- {results[-1].data.rhoBarSquare > results[-2].data.rhoBarSquare}"))
         print('***************')
-        #print(f"Output file: {results[-1].data.htmlFileName}")   
+        #print(f"Output file: {results[-1].data.htmlFileName}")
 
-def estimate_model(V
-                   #, CHOICE, Car_SP, TRAIN_SP, SM_SP, CAR_AV_SP, TRAIN_AV_SP, SM_AV
+        
+        
+        
+def cv_estimate_model(V
                    , Draws
                    , ModName
                    , train
-                   , myRandomNumberGenerators):
+                   , myRandomNumberGenerators
+                   , COST_SCALE_CAR=100
+                   ,COST_SCALE_PUB=100 ):
     db_train = db.Database("swissmetro_train",train)
     db_train.setRandomNumberGenerators(myRandomNumberGenerators)
     globals().update(db_train.variables)
@@ -301,36 +331,6 @@ def estimate_model(V
     BETA_HE_std = Beta('BETA_HE_std',1,None,None,0)
     BETA_HE_random = -exp(BETA_HE_mean + BETA_HE_std * bioDraws('BETA_HE_random','NORMAL'))
 
-    ##ML RANDOM GENERIC TIME LOGNORMAL
-    BBETA_TIME_mean = Beta('BBETA_TIME_mean',0,None,None,0)
-    BBETA_TIME_std = Beta('BBETA_TIME_std',1,None,None,0)
-    BBETA_TIME_random = -exp(BBETA_TIME_mean + BBETA_TIME_std * bioDraws('BBETA_TIME_random','NORMAL'))
-
-    ##ML RANDOM SPECIFIC TIME TRAIN LOGNORMAL
-    BBETA_TIME_TRAIN_mean = Beta('BBETA_TIME_TRAIN_mean',0,None,None,0)
-    BBETA_TIME_TRAIN_std = Beta('BBETA_TIME_TRAIN_std',1,None,None,0)
-    BBETA_TIME_TRAIN_random = -exp(BBETA_TIME_TRAIN_mean + BBETA_TIME_TRAIN_std * bioDraws('BBETA_TIME_TRAIN_random','NORMAL'))
-
-    ##ML RANDOM SPECIFIC TIME SM  LOGNORMAL
-    BBETA_TIME_SM_mean = Beta('BBETA_TIME_SM_mean',0,None,None,0)
-    BBETA_TIME_SM_std = Beta('BBETA_TIME_SM_std',1,None,None,0)
-    BBETA_TIME_SM_random = -exp(BBETA_TIME_SM_mean + BBETA_TIME_SM_std * bioDraws('BBETA_TIME_SM_random','NORMAL'))
-
-    ##ML RANDOM SPECIFIC TIME CAR LOGNORMAL
-    BBETA_TIME_CAR_mean = Beta('BBETA_TIME_CAR_mean',0,None,None,0)
-    BBETA_TIME_CAR_std = Beta('BBETA_TIME_CAR_std',1,None,None,0)
-    BBETA_TIME_CAR_random = -exp(BBETA_TIME_CAR_mean + BBETA_TIME_CAR_std * bioDraws('BBETA_TIME_CAR_random','NORMAL'))
-
-    ##ML RANDOM GENERIC COST LOGNORMAL
-    BBETA_COST_mean = Beta('BBETA_COST_mean',0,None,None,0)
-    BBETA_COST_std = Beta('BBETA_COST_std',1,None,None,0)
-    BBETA_COST_random = -exp(BBETA_COST_mean + BBETA_COST_std * bioDraws('BBETA_COST_random','NORMAL'))
-
-    ##ML RANDOM GENERIC HE LOGNORMAL
-    BBETA_HE_mean = Beta('BBETA_HE_mean',0,None,None,0)
-    BBETA_HE_std = Beta('BBETA_HE_std',1,None,None,0)
-    BBETA_HE_random = -exp(BBETA_HE_mean + BBETA_HE_std * bioDraws('BBETA_HE_random','NORMAL'))
-
     ##ML RANDOM GENERIC TIME NORMAL
     BETA_TIME_mean_Norm = Beta('BETA_TIME_mean_Norm',0,None,None,0)
     BETA_TIME_std_Norm = Beta('BETA_TIME_std_Norm',1,None,None,0)
@@ -350,6 +350,11 @@ def estimate_model(V
     BETA_TIME_CAR_mean_Norm = Beta('BETA_TIME_CAR_mean_Norm',0,None,None,0)
     BETA_TIME_CAR_std_Norm = Beta('BETA_TIME_CAR_std_Norm',1,None,None,0)
     BETA_TIME_CAR_random_Norm = BETA_TIME_CAR_mean_Norm + BETA_TIME_CAR_std_Norm * bioDraws('BETA_TIME_CAR_random_Norm','NORMAL')
+    
+    ##ML RANDOM GENERIC COST LOGNORMAL
+    BETA_COST_PUB_mean = Beta('BBETA_COST_PUB_mean',0,None,None,0)
+    BETA_COST_PUB_std = Beta('BBETA_COST_PUB_std',1,None,None,0)
+    BETA_COST_PUB_random = -exp(BETA_COST_PUB_mean + BETA_COST_PUB_std * bioDraws('BBETA_COST_PUB_random','NORMAL'))
 
     ##ML RANDOM GENERIC COST NORMAL
     BETA_COST_mean_Norm = Beta('BETA_COST_mean_Norm',0,None,None,0)
@@ -360,54 +365,37 @@ def estimate_model(V
     BETA_HE_mean_Norm = Beta('BETA_HE_mean_Norm',0,None,None,0)
     BETA_HE_std_Norm = Beta('BETA_HE_std_Norm',1,None,None,0)
     BETA_HE_random_Norm = BETA_HE_mean_Norm + BETA_HE_std_Norm * bioDraws('BETA_HE_random_Norm','NORMAL')
+    
+    '''
+    ***********************************************************************************************
+    '''
+    
 
-    ##ML RANDOM GENERIC TIME NORMAL
-    BBETA_TIME_mean_Norm = Beta('BBETA_TIME_mean_Norm',0,None,None,0)
-    BBETA_TIME_std_Norm = Beta('BBETA_TIME_std_Norm',1,None,None,0)
-    BBETA_TIME_random_Norm = BBETA_TIME_mean_Norm + BBETA_TIME_std_Norm * bioDraws('BBETA_TIME_random_Norm','NORMAL')
+    #PUBLIC
+    TRAIN_COST_SCALED = DefineVariable('TRAIN_COST_SCALED',\
+                                       TRAIN_COST / COST_SCALE_PUB,db_train)
+    SM_COST_SCALED = DefineVariable('SM_COST_SCALED', SM_COST / COST_SCALE_PUB,db_train)
 
-    ##ML RANDOM SPECIFIC TIME TRAIN LOGNORMAL
-    BBETA_TIME_TRAIN_mean_Norm = Beta('BBETA_TIME_TRAIN_mean_Norm',0,None,None,0)
-    BBETA_TIME_TRAIN_std_Norm = Beta('BBETA_TIME_TRAIN_std_Norm',1,None,None,0)
-    BBETA_TIME_TRAIN_random_Norm = BBETA_TIME_TRAIN_mean_Norm + BBETA_TIME_TRAIN_std_Norm * bioDraws('BBETA_TIME_TRAIN_random_Norm','NORMAL')
-
-    ##ML RANDOM SPECIFIC TIME SM  NORMAL
-    BBETA_TIME_SM_mean_Norm = Beta('BBETA_TIME_SM_mean_Norm',0,None,None,0)
-    BBETA_TIME_SM_std_Norm = Beta('BBETA_TIME_SM_std_Norm',1,None,None,0)
-    BBETA_TIME_SM_random_Norm = BBETA_TIME_SM_mean_Norm + BBETA_TIME_SM_std_Norm * bioDraws('BBETA_TIME_SM_random_Norm','NORMAL')
-
-    ##ML RANDOM SPECIFIC TIME CAR NORMAL
-    BBETA_TIME_CAR_mean_Norm = Beta('BBETA_TIME_CAR_mean_Norm',0,None,None,0)
-    BBETA_TIME_CAR_std_Norm = Beta('BBETA_TIME_CAR_std_Norm',1,None,None,0)
-    BBETA_TIME_CAR_random_Norm = BBETA_TIME_CAR_mean_Norm + BBETA_TIME_CAR_std_Norm * bioDraws('BBETA_TIME_CAR_random_Norm','NORMAL')
-
-    ##ML RANDOM GENERIC COST NORMAL
-    BBETA_COST_mean_Norm = Beta('BBETA_COST_mean_Norm',0,None,None,0)
-    BBETA_COST_std_Norm = Beta('BBETA_COST_std_Norm',1,None,None,0)
-    BBETA_COST_random_Norm = BBETA_COST_mean_Norm + BBETA_COST_std_Norm * bioDraws('BBETA_COST_random_Norm','NORMAL')
-
-    ##ML RANDOM GENERIC HE NORMAL
-    BBETA_HE_mean_Norm = Beta('BBETA_HE_mean_Norm',0,None,None,0)
-    BBETA_HE_std_Norm = Beta('BBETA_HE_std_Norm',1,None,None,0)
-    BBETA_HE_random_Norm = BBETA_HE_mean_Norm + BBETA_HE_std_Norm * bioDraws('BBETA_HE_random_Norm','NORMAL')
-
+    #CAR
+    CAR_COST_SCALED = DefineVariable('CAR_COST_SCALED', CAR_CO / COST_SCALE_CAR,db_train)
+    '''
+    ***********************************************************************************************
+    '''
     ##Scaling 'COST', 'TRAVEL-TIME' and 'HE' by a factor of 100 and adding the scaled variables to the database
 
     TRAIN_TT_SCALED = DefineVariable('TRAIN_TT_SCALED',\
                                      TRAIN_TT / 100.0,db_train)
-    TRAIN_COST_SCALED = DefineVariable('TRAIN_COST_SCALED',\
-                                       TRAIN_COST / 100,db_train)
+    
     TRAIN_HE_SCALED = DefineVariable('TRAIN_HE_SCALED',\
                                        TRAIN_HE / 100, db_train)
 
     SM_TT_SCALED = DefineVariable('SM_TT_SCALED', SM_TT / 100.0,db_train)
-    SM_COST_SCALED = DefineVariable('SM_COST_SCALED', SM_COST / 100,db_train)
+    
     SM_HE_SCALED = DefineVariable('SM_HE_SCALED',\
                                        SM_HE / 100, db_train)
 
     CAR_TT_SCALED = DefineVariable('CAR_TT_SCALED', CAR_TT / 100,db_train)
-    CAR_COST_SCALED = DefineVariable('CAR_COST_SCALED', CAR_CO / 100,db_train)
-
+    
     ###Defining new variables and adding columns to the database
     #Age
     AGE_1 = DefineVariable('AGE_1', (  AGE   ==  1  ),db_train) #don't scale because is cathegorical
@@ -422,6 +410,7 @@ def estimate_model(V
     COMMUTER = DefineVariable("COMMUTER", (PURPOSE == 2), db_train)
     BUSINESS = DefineVariable("BUSINESS", (PURPOSE == 3), db_train)
     
+    #Model Estimation
     av = {3: CAR_AV_SP,1: TRAIN_AV_SP,2: SM_AV}
     obsprob = exp(models.loglogit(V,av,CHOICE))
     condprobIndiv = PanelLikelihoodTrajectory(obsprob)
@@ -431,13 +420,14 @@ def estimate_model(V
     result = bg.estimate()
     return result
 
-def test_model(V
-               #, CHOICE, Car_SP, TRAIN_SP, SM_SP, CAR_AV_SP, TRAIN_AV_SP, SM_AV
+def cv_test_model(V
                , R
                , Draws
                , ModName
                , test
-               , myRandomNumberGenerators):
+               , myRandomNumberGenerators
+               , COST_SCALE_CAR=100
+               ,COST_SCALE_PUB=100 ):
     
     db_test = db.Database("swissmetro_test",test)
     db_test.setRandomNumberGenerators(myRandomNumberGenerators)
@@ -595,36 +585,6 @@ def test_model(V
     BETA_HE_std = Beta('BETA_HE_std',1,None,None,0)
     BETA_HE_random = -exp(BETA_HE_mean + BETA_HE_std * bioDraws('BETA_HE_random','NORMAL'))
 
-    ##ML RANDOM GENERIC TIME LOGNORMAL
-    BBETA_TIME_mean = Beta('BBETA_TIME_mean',0,None,None,0)
-    BBETA_TIME_std = Beta('BBETA_TIME_std',1,None,None,0)
-    BBETA_TIME_random = -exp(BBETA_TIME_mean + BBETA_TIME_std * bioDraws('BBETA_TIME_random','NORMAL'))
-
-    ##ML RANDOM SPECIFIC TIME TRAIN LOGNORMAL
-    BBETA_TIME_TRAIN_mean = Beta('BBETA_TIME_TRAIN_mean',0,None,None,0)
-    BBETA_TIME_TRAIN_std = Beta('BBETA_TIME_TRAIN_std',1,None,None,0)
-    BBETA_TIME_TRAIN_random = -exp(BBETA_TIME_TRAIN_mean + BBETA_TIME_TRAIN_std * bioDraws('BBETA_TIME_TRAIN_random','NORMAL'))
-
-    ##ML RANDOM SPECIFIC TIME SM  LOGNORMAL
-    BBETA_TIME_SM_mean = Beta('BBETA_TIME_SM_mean',0,None,None,0)
-    BBETA_TIME_SM_std = Beta('BBETA_TIME_SM_std',1,None,None,0)
-    BBETA_TIME_SM_random = -exp(BBETA_TIME_SM_mean + BBETA_TIME_SM_std * bioDraws('BBETA_TIME_SM_random','NORMAL'))
-
-    ##ML RANDOM SPECIFIC TIME CAR LOGNORMAL
-    BBETA_TIME_CAR_mean = Beta('BBETA_TIME_CAR_mean',0,None,None,0)
-    BBETA_TIME_CAR_std = Beta('BBETA_TIME_CAR_std',1,None,None,0)
-    BBETA_TIME_CAR_random = -exp(BBETA_TIME_CAR_mean + BBETA_TIME_CAR_std * bioDraws('BBETA_TIME_CAR_random','NORMAL'))
-
-    ##ML RANDOM GENERIC COST LOGNORMAL
-    BBETA_COST_mean = Beta('BBETA_COST_mean',0,None,None,0)
-    BBETA_COST_std = Beta('BBETA_COST_std',1,None,None,0)
-    BBETA_COST_random = -exp(BBETA_COST_mean + BBETA_COST_std * bioDraws('BBETA_COST_random','NORMAL'))
-
-    ##ML RANDOM GENERIC HE LOGNORMAL
-    BBETA_HE_mean = Beta('BBETA_HE_mean',0,None,None,0)
-    BBETA_HE_std = Beta('BBETA_HE_std',1,None,None,0)
-    BBETA_HE_random = -exp(BBETA_HE_mean + BBETA_HE_std * bioDraws('BBETA_HE_random','NORMAL'))
-
     ##ML RANDOM GENERIC TIME NORMAL
     BETA_TIME_mean_Norm = Beta('BETA_TIME_mean_Norm',0,None,None,0)
     BETA_TIME_std_Norm = Beta('BETA_TIME_std_Norm',1,None,None,0)
@@ -634,6 +594,11 @@ def test_model(V
     BETA_TIME_TRAIN_mean_Norm = Beta('BETA_TIME_TRAIN_mean_Norm',0,None,None,0)
     BETA_TIME_TRAIN_std_Norm = Beta('BETA_TIME_TRAIN_std_Norm',1,None,None,0)
     BETA_TIME_TRAIN_random_Norm = BETA_TIME_TRAIN_mean_Norm + BETA_TIME_TRAIN_std_Norm * bioDraws('BETA_TIME_TRAIN_random_Norm','NORMAL')
+    
+    ##ML RANDOM GENERIC COST LOGNORMAL
+    BETA_COST_PUB_mean = Beta('BBETA_COST_PUB_mean',0,None,None,0)
+    BETA_COST_PUB_std = Beta('BBETA_COST_PUB_std',1,None,None,0)
+    BETA_COST_PUB_random = -exp(BETA_COST_PUB_mean + BETA_COST_PUB_std * bioDraws('BBETA_COST_PUB_random','NORMAL'))
 
     ##ML RANDOM SPECIFIC TIME SM  NORMAL
     BETA_TIME_SM_mean_Norm = Beta('BETA_TIME_SM_mean_Norm',0,None,None,0)
@@ -665,43 +630,36 @@ def test_model(V
     BBETA_TIME_TRAIN_std_Norm = Beta('BBETA_TIME_TRAIN_std_Norm',1,None,None,0)
     BBETA_TIME_TRAIN_random_Norm = BBETA_TIME_TRAIN_mean_Norm + BBETA_TIME_TRAIN_std_Norm * bioDraws('BBETA_TIME_TRAIN_random_Norm','NORMAL')
 
-    ##ML RANDOM SPECIFIC TIME SM  NORMAL
-    BBETA_TIME_SM_mean_Norm = Beta('BBETA_TIME_SM_mean_Norm',0,None,None,0)
-    BBETA_TIME_SM_std_Norm = Beta('BBETA_TIME_SM_std_Norm',1,None,None,0)
-    BBETA_TIME_SM_random_Norm = BBETA_TIME_SM_mean_Norm + BBETA_TIME_SM_std_Norm * bioDraws('BBETA_TIME_SM_random_Norm','NORMAL')
-
-    ##ML RANDOM SPECIFIC TIME CAR NORMAL
-    BBETA_TIME_CAR_mean_Norm = Beta('BBETA_TIME_CAR_mean_Norm',0,None,None,0)
-    BBETA_TIME_CAR_std_Norm = Beta('BBETA_TIME_CAR_std_Norm',1,None,None,0)
-    BBETA_TIME_CAR_random_Norm = BBETA_TIME_CAR_mean_Norm + BBETA_TIME_CAR_std_Norm * bioDraws('BBETA_TIME_CAR_random_Norm','NORMAL')
-
-    ##ML RANDOM GENERIC COST NORMAL
-    BBETA_COST_mean_Norm = Beta('BBETA_COST_mean_Norm',0,None,None,0)
-    BBETA_COST_std_Norm = Beta('BBETA_COST_std_Norm',1,None,None,0)
-    BBETA_COST_random_Norm = BBETA_COST_mean_Norm + BBETA_COST_std_Norm * bioDraws('BBETA_COST_random_Norm','NORMAL')
-
-    ##ML RANDOM GENERIC HE NORMAL
-    BBETA_HE_mean_Norm = Beta('BBETA_HE_mean_Norm',0,None,None,0)
-    BBETA_HE_std_Norm = Beta('BBETA_HE_std_Norm',1,None,None,0)
-    BBETA_HE_random_Norm = BBETA_HE_mean_Norm + BBETA_HE_std_Norm * bioDraws('BBETA_HE_random_Norm','NORMAL')
 
     ##Scaling 'COST', 'TRAVEL-TIME' and 'HE' by a factor of 100 and adding the scaled variables to the database
+    '''
+    ***********************************************************************************************
+    '''
+    
+    #PUBLIC
+    TRAIN_COST_SCALED = DefineVariable('TRAIN_COST_SCALED',\
+                                       TRAIN_COST / COST_SCALE_PUB,db_test)
+    SM_COST_SCALED = DefineVariable('SM_COST_SCALED', SM_COST / COST_SCALE_PUB,db_test)
 
+    #CAR
+    CAR_COST_SCALED = DefineVariable('CAR_COST_SCALED', CAR_CO / COST_SCALE_CAR,db_test)
+    '''
+    ***********************************************************************************************
+    '''
     TRAIN_TT_SCALED = DefineVariable('TRAIN_TT_SCALED',\
                                      TRAIN_TT / 100.0,db_test)
-    TRAIN_COST_SCALED = DefineVariable('TRAIN_COST_SCALED',\
-                                       TRAIN_COST / 100,db_test)
+    
     TRAIN_HE_SCALED = DefineVariable('TRAIN_HE_SCALED',\
                                        TRAIN_HE / 100, db_test)
 
     SM_TT_SCALED = DefineVariable('SM_TT_SCALED', SM_TT / 100.0,db_test)
-    SM_COST_SCALED = DefineVariable('SM_COST_SCALED', SM_COST / 100,db_test)
+    
     SM_HE_SCALED = DefineVariable('SM_HE_SCALED',\
                                        SM_HE / 100, db_test)
 
     CAR_TT_SCALED = DefineVariable('CAR_TT_SCALED', CAR_TT / 100,db_test)
-    CAR_COST_SCALED = DefineVariable('CAR_COST_SCALED', CAR_CO / 100,db_test)
-
+    
+    
     ###Defining new variables and adding columns to the database
     #Age
     AGE_1 = DefineVariable('AGE_1', (  AGE   ==  1  ),db_test) #don't scale because is cathegorical
@@ -751,7 +709,9 @@ def cross_validation(names_list
                      , vSeq=[]
                      , Draws=100
                      , train_idx=None
-                     , test_idx=None):
+                     , test_idx=None
+                     , COST_SCALE_CAR=100
+                     , COST_SCALE_PUB=100 ):
     #print(names_list)
     names_idx = [ ModNameSeqence.index(n) for n in names_list]  
     #print(names_idx)
@@ -769,19 +729,23 @@ def cross_validation(names_list
         for jj, index in enumerate(zip(train_idx,test_idx)):
             train = pandas.iloc[index[0]].copy()
             test = pandas.iloc[index[1]].copy()    
-            R[i].append(estimate_model(vSeq[m]
+            R[i].append(cv_estimate_model(vSeq[m]
                                        #, CHOICE, Car_SP, TRAIN_SP, SM_SP, CAR_AV_SP, TRAIN_AV_SP, SM_AV
                                        , Draws
                                        , ModNameSeqence[m]+'_tr_'+str(i)+'_loop_'+str(jj)
                                        , train
-                                       , myRandomNumberGenerators))
-            SR = test_model(vSeq[m]
+                                       , myRandomNumberGenerators
+                                       , COST_SCALE_CAR=COST_SCALE_CAR
+                                       ,COST_SCALE_PUB=COST_SCALE_PUB))
+            SR = cv_test_model(vSeq[m]
                             #, CHOICE, Car_SP, TRAIN_SP, SM_SP, CAR_AV_SP, TRAIN_AV_SP, SM_AV
                             , R[i][jj]
                             , Draws
                             , ModNameSeqence[m]+'_te_'+str(i)+'_loop_'+str(jj)
                             , test
-                            , myRandomNumberGenerators)
+                            , myRandomNumberGenerators
+                            , COST_SCALE_CAR=COST_SCALE_CAR
+                            , COST_SCALE_PUB=COST_SCALE_PUB)
             loglike = 0
             #print(test.CHOICE.values.tolist())
             for ii,c in enumerate(test.CHOICE.values.tolist()):
@@ -803,6 +767,50 @@ def cross_validation(names_list
     display(Markdown(f'## Accept {best} performs better off the sample'))
     return best, LLL
 
+
+
+
+def estimate_wrap(V, av, CHOICE, database, panelEst, ModNameSeqence, Draws):
+    '''
+    #
+    #
+    #
+    '''
+    
+    if panelEst:
+        #database.panel('ID')
+        # Conditional to B_TIME_RND, the likelihood of one observation is
+        # given by the logit model (called the kernel)
+        obsprob = exp(models.loglogit(V,av,CHOICE))
+
+        # Conditional to B_TIME_RND, the likelihood of all observations for
+        # one individual (the trajectory) is the product of the likelihood of
+        # each observation.
+        condprobIndiv = PanelLikelihoodTrajectory(obsprob)
+        if Draws>0:
+            condprobIndiv = MonteCarlo(condprobIndiv)
+
+
+        logprob = log(condprobIndiv)
+    else:
+        prob = exp(models.loglogit(V,av,CHOICE))
+        if Draws>0:
+            prob = MonteCarlo(prob)
+        logprob = log(prob)
+        
+    if Draws>0:
+        biogeme = bio.BIOGEME(database,logprob,numberOfDraws=Draws)
+    else:
+        biogeme = bio.BIOGEME(database,logprob)
+    
+    biogeme.modelName = ModNameSeqence
+    
+    return biogeme.estimate()    
+
+
+
+
+
 def estimate_N_compare(name_unrestricted
                        , name_restricted
                        , vSeq
@@ -818,14 +826,18 @@ def estimate_N_compare(name_unrestricted
                        , Prob=0.95
                        , threshold=0.07
                        , testOnly=False
-                       , panelEst=True):
+                       , panelEst=True
+                       , Montecarlo=True
+                       , PlotVarCovar=True
+                       , COST_SCALE_CAR=100
+                       , COST_SCALE_PUB=100
+                       , cross_validate = True):
     '''
     Estimate one model and compare it with the other
     2 tests are applied
     Loglikelihood
     BenakivaHorowitzTest
     '''
-    
     u_ix = ModNameSeqence.index(name_unrestricted)
     r_ix = ModNameSeqence.index(name_restricted)
     
@@ -834,7 +846,7 @@ def estimate_N_compare(name_unrestricted
 
     if not testOnly:
         display(Markdown(f'## Estimate  {ModNameSeqence[u_ix]} and compare with {ModNameSeqence[r_ix]}'))
-
+        '''
         if panelEst:
             #database.panel('ID')
             # Conditional to B_TIME_RND, the likelihood of one observation is
@@ -851,17 +863,18 @@ def estimate_N_compare(name_unrestricted
         else:
             prob = exp(models.loglogit(vSeq[u_ix],av,CHOICE))
             logprob = log(MonteCarlo(prob))
-
-
+        
+        
         # Create the Biogeme object
         biogeme = bio.BIOGEME(database,logprob,numberOfDraws=Draws)
         biogeme.modelName = ModNameSeqence[u_ix]
-
+        '''
         # Estimate the parameters
-        results.append(biogeme.estimate())
+        results.append(estimate_wrap(vSeq[u_ix], av, CHOICE, database, panelEst, ModNameSeqence[u_ix], Draws))
         
     else:
         print('Compare',ModNameSeqence[u_ix],' with',ModNameSeqence[r_ix])
+    
     #TEST LOGLIKERATIO
     restr_betas = results[r_ix].getEstimatedParameters().shape[0]
     unrestr_betas =  results[u_ix].getEstimatedParameters().shape[0]
@@ -872,9 +885,13 @@ def estimate_N_compare(name_unrestricted
         r_ix = k
         restr_betas = results[r_ix].getEstimatedParameters().shape[0]
         unrestr_betas =  results[u_ix].getEstimatedParameters().shape[0]
+        name_restricted = ModNameSeqence[r_ix]
+        name_unrestricted = ModNameSeqence[u_ix]
     
-    display(Markdown(f'#### Unrestricted model {ModNameSeqence[u_ix]} and Restricted model {ModNameSeqence[r_ix]}'))
-    print_result([results[u_ix],results[r_ix]], database)
+    display(Markdown(f'#### Unrestricted model {name_unrestricted} and Restricted model {name_restricted}'))
+    
+    print_result([results[u_ix],results[r_ix]], database, PlotVarCovar=PlotVarCovar)
+    
     restr_LL = results[r_ix].data.logLike
     unrestr_LL = results[u_ix].data.logLike
     
@@ -884,57 +901,50 @@ def estimate_N_compare(name_unrestricted
     N=database.getNumberOfObservations()
     rh0bs_U = results[u_ix].data.rhoBarSquare
     rh0bs_R = results[r_ix].data.rhoBarSquare
-    BenRes = BenAkivaSwaitHorowitzTest(unrestr_betas, restr_betas, N, J, rh0bs_U, rh0bs_R, name_unrestricted, name_restricted, threshold=threshold)
+    BenRes = BenAkivaSwaitHorowitzTest(  unrestr_betas
+                                       , restr_betas
+                                       , N
+                                       , J
+                                       , rh0bs_U
+                                       , rh0bs_R
+                                       , name_unrestricted
+                                       , name_restricted
+                                       , threshold=threshold)
     
     display(Markdown(f'#### LogLikelihood {LikeRes} - BenAkivaSwaitHorowitzTest {BenRes}'))
-    if BenRes == LikeRes:
-        return LikeRes, results
-    else:
-        display(Markdown(f'#### LogLikelihood TEST {LikeRes} disagrees with BenAkivaSwaitHorowitzTest {BenRes}'))
-        display(Markdown(f'### TRY  CROSS VALIDATION'))
+    
+    #The model is not identified
+    if results[u_ix].getEstimatedParameters()['p-value'][results[u_ix].getEstimatedParameters()['p-value']==1].sum() > 0 :
+        OO = ModNameSeqence[r_ix]
+        display(Markdown(f'## {ModNameSeqence[u_ix]} is NOT identified'))
+    
+    elif results[r_ix].getEstimatedParameters()['p-value'][results[r_ix].getEstimatedParameters()['p-value']==1].sum() > 0 :
+        OO = ModNameSeqence[u_ix]
+        display(Markdown(f'## {ModNameSeqence[r_ix]} is NOT identified'))       
+    
+    #The model is not identified
+    elif BenRes == LikeRes:
+        OO = LikeRes
         
-        output = cross_validation([ModNameSeqence[u_ix],ModNameSeqence[r_ix]]
-                                  , pandas
-                                  #, CHOICE, Car_SP, TRAIN_SP, SM_SP, CAR_AV_SP, TRAIN_AV_SP, SM_AV
-                                  , myRandomNumberGenerators
-                                  , ModNameSeqence=ModNameSeqence
-                                  , vSeq=vSeq
-                                  , Draws=100)
-        return output[0], results
+    
+    else:
+        if Draws>0 and cross_validate:
+            display(Markdown(f'#### LogLikelihood TEST {LikeRes} disagrees with BenAkivaSwaitHorowitzTest {BenRes}'))
+            display(Markdown(f'### TRY  CROSS VALIDATION'))
 
-'''
-#import dataset
-pandas = pd.read_table("http://transp-or.epfl.ch/data/swissmetro.dat")
-
-#rearrange dataset
-#return from work = commuter
-pandas.loc[:, ('PURPOSE')][(pandas['PURPOSE']==5)] = 1
-#return from shopping = shopping
-pandas.loc[:, ('PURPOSE')][(pandas['PURPOSE']==6)] = 2
-#return from business = business
-pandas.loc[:, ('PURPOSE')][(pandas['PURPOSE']==7)] = 3
-#return from leisure = leisure
-pandas.loc[:, ('PURPOSE')][(pandas['PURPOSE']==8)] = 4
-
-pandas = pandas[(pandas['AGE'] !=6 ) & \
-                #(pandas['INCOME'] !=4 ) &\
-                (pandas['PURPOSE'] !=9 ) &\
-                (pandas['CHOICE'] !=0 )]
-
-
-#define dictionaries for visualization  of variables names
-age_dic = {1: 'age≤24', 2: '24<age≤39', 3: '39<age≤54', 4: '54<age≤65', 5: '65<age', 6: 'not known'}
-purpose_dic = {1: 'Commuter', 2: 'Shopping', 3: 'Business', 4: 'Leisure', 5: 'Return from work', 6: 'Return from shopping', 7: 'Return from business', 8: 'Return from leisure', 9: 'other'}
-choice_dic = {1: 'Train', 2: 'SM', 3: 'Car'}
-pandas.loc[:, ('INCOME')][(pandas['INCOME']==0)] = 1
-income_dic = {1: 'under 50', 2: 'between 50 and 100', 3: 'over 100', 4: 'unknown'}
-dic = [age_dic, income_dic, purpose_dic, choice_dic]
-ticket_dic = {0: 'None', 1: 'Two way with half price card', 2: 'One way with half price card', 3: 'Two way normal price', 4: 'One way normal price', 5: 'Half day', 6: 'Annual season ticket', 7: 'Annual season ticket Junior or Senior', 8: 'Free travel after 7pm card', 9: 'Group ticket', 10: 'Other'}
-#load data into  database
-database = db.Database("swissmetro",pandas)
-globals().update(database.variables)
-database.panel('ID')
-## Define the draw generator
-myRandomNumberGenerators = {'MLHS':draws.getLatinHypercubeDraws}
-database.setRandomNumberGenerators(myRandomNumberGenerators)
-'''
+            output = cross_validation([ModNameSeqence[u_ix],ModNameSeqence[r_ix]]
+                                      , pandas
+                                      , myRandomNumberGenerators
+                                      , ModNameSeqence=ModNameSeqence
+                                      , vSeq=vSeq
+                                      , Draws=Draws
+                                      ,COST_SCALE_CAR=COST_SCALE_CAR
+                                      ,COST_SCALE_PUB=COST_SCALE_PUB)
+            OO=output[0] 
+            #RR=results
+        else:
+            OO=BenRes
+            #RR=results
+    display(Markdown(f'# -----'))
+    display(Markdown(f'# ML_{len(ModNameSeqence)+1}  NEXT MODEL'))
+    return OO, results
