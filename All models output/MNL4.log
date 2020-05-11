@@ -1,0 +1,25 @@
+*** File created 2020-04-28 09:13:32.194261 ***
+*** Log file from biogeme 3.2.5 [2020-04-28]
+[09:13:31] < General >   Remove 35 unused variables from the database as only 12 are used.
+[09:13:31] < General >   Log likelihood (N=10692):  -11071.26
+[09:13:31] < General >   Minimize with tol 1e-07
+[09:13:31] < General >   Log likelihood (N=10692):  -11071.26 Gradient norm:      5e+03  
+[09:13:31] < General >   Log likelihood (N=10692):   -9047.36 Gradient norm:      1e+03  
+[09:13:31] < General >   Log likelihood (N=10692):  -8892.242 Gradient norm:      7e+02  
+[09:13:31] < General >   Log likelihood (N=10692):  -8663.084 Gradient norm:      3e+02  
+[09:13:31] < General >   Log likelihood (N=10692):  -8632.216 Gradient norm:      1e+02  
+[09:13:31] < General >   Log likelihood (N=10692):  -8620.049 Gradient norm:      4e+01  
+[09:13:31] < General >   Log likelihood (N=10692):  -8618.778 Gradient norm:      2e+01  
+[09:13:31] < General >   Log likelihood (N=10692):   -8618.07 Gradient norm:      2e+01  
+[09:13:31] < General >   Log likelihood (N=10692):  -8617.555 Gradient norm:      2e+01  
+[09:13:31] < General >   Log likelihood (N=10692):   -8617.36 Gradient norm:          4  
+[09:13:32] < General >   Log likelihood (N=10692):  -8617.355 Gradient norm:        0.4  
+[09:13:32] < General >   Log likelihood (N=10692):  -8617.355 Gradient norm:        0.1  
+[09:13:32] < General >   Log likelihood (N=10692):  -8617.355 Gradient norm:        0.2  
+[09:13:32] < General >   Log likelihood (N=10692):  -8617.355 Gradient norm:       0.07  
+[09:13:32] < General >   Log likelihood (N=10692):  -8617.355 Gradient norm:      0.007  
+[09:13:32] < General >   Log likelihood (N=10692):  -8617.355 Gradient norm:     0.0001  
+[09:13:32] < General >   Log likelihood (N=10692):  -8617.355 Gradient norm:     0.0001 Hessian norm:       4e+03 BHHH norm:       5e+03
+[09:13:32] < General >   Results saved in file MNL4.html
+[09:13:32] < General >   Results saved in file MNL4.pickle
+[09:13:32] < General >   Log file created: MNL4.log

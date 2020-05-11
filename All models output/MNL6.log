@@ -1,0 +1,31 @@
+*** File created 2020-04-28 09:13:33.840391 ***
+*** Log file from biogeme 3.2.5 [2020-04-28]
+[09:13:33] < General >   Remove 35 unused variables from the database as only 12 are used.
+[09:13:33] < General >   Log likelihood (N=10692):  -11071.26
+[09:13:33] < General >   Minimize with tol 1e-07
+[09:13:33] < General >   Log likelihood (N=10692):  -11071.26 Gradient norm:      5e+03  
+[09:13:33] < General >   Log likelihood (N=10692):   -9378.94 Gradient norm:      3e+03  
+[09:13:33] < General >   Log likelihood (N=10692):  -9035.521 Gradient norm:      1e+03  
+[09:13:33] < General >   Log likelihood (N=10692):  -8939.877 Gradient norm:      7e+02  
+[09:13:33] < General >   Log likelihood (N=10692):  -8799.263 Gradient norm:      5e+02  
+[09:13:33] < General >   Log likelihood (N=10692):  -8698.457 Gradient norm:      4e+02  
+[09:13:33] < General >   Log likelihood (N=10692):  -8599.612 Gradient norm:      2e+02  
+[09:13:33] < General >   Log likelihood (N=10692):  -8559.416 Gradient norm:      1e+02  
+[09:13:33] < General >   Log likelihood (N=10692):   -8549.83 Gradient norm:      7e+01  
+[09:13:33] < General >   Log likelihood (N=10692):  -8545.561 Gradient norm:      9e+01  
+[09:13:33] < General >   Log likelihood (N=10692):  -8541.124 Gradient norm:      5e+01  
+[09:13:33] < General >   Log likelihood (N=10692):  -8539.462 Gradient norm:      2e+01  
+[09:13:33] < General >   Log likelihood (N=10692):  -8539.391 Gradient norm:      3e+01  
+[09:13:33] < General >   Log likelihood (N=10692):   -8539.31 Gradient norm:      1e+01  
+[09:13:33] < General >   Log likelihood (N=10692):  -8539.302 Gradient norm:        0.6  
+[09:13:33] < General >   Log likelihood (N=10692):  -8539.301 Gradient norm:        0.2  
+[09:13:33] < General >   Log likelihood (N=10692):  -8539.301 Gradient norm:       0.09  
+[09:13:33] < General >   Log likelihood (N=10692):  -8539.301 Gradient norm:       0.09  
+[09:13:33] < General >   Log likelihood (N=10692):  -8539.301 Gradient norm:       0.04  
+[09:13:33] < General >   Log likelihood (N=10692):  -8539.301 Gradient norm:       0.01  
+[09:13:33] < General >   Log likelihood (N=10692):  -8539.301 Gradient norm:      0.006  
+[09:13:33] < General >   Log likelihood (N=10692):  -8539.301 Gradient norm:     0.0008  
+[09:13:33] < General >   Log likelihood (N=10692):  -8539.301 Gradient norm:     0.0008 Hessian norm:       8e+03 BHHH norm:       8e+03
+[09:13:33] < General >   Results saved in file MNL6.html
+[09:13:33] < General >   Results saved in file MNL6.pickle
+[09:13:33] < General >   Log file created: MNL6.log

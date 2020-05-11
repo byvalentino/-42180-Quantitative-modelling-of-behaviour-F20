@@ -1,0 +1,19 @@
+*** File created 2020-04-28 09:13:31.280493 ***
+*** Log file from biogeme 3.2.5 [2020-04-28]
+[09:13:31] < General >   Remove 40 unused variables from the database as only 7 are used.
+[09:13:31] < General >   Log likelihood (N=10692):  -11071.26
+[09:13:31] < General >   Minimize with tol 1e-07
+[09:13:31] < General >   Log likelihood (N=10692):  -11071.26 Gradient norm:      3e+03  
+[09:13:31] < General >   Log likelihood (N=10692):  -9437.843 Gradient norm:      8e+02  
+[09:13:31] < General >   Log likelihood (N=10692):   -9301.69 Gradient norm:      5e+02  
+[09:13:31] < General >   Log likelihood (N=10692):  -9200.265 Gradient norm:      3e+01  
+[09:13:31] < General >   Log likelihood (N=10692):  -9199.907 Gradient norm:          5  
+[09:13:31] < General >   Log likelihood (N=10692):  -9199.898 Gradient norm:        0.9  
+[09:13:31] < General >   Log likelihood (N=10692):  -9199.897 Gradient norm:        0.5  
+[09:13:31] < General >   Log likelihood (N=10692):  -9199.897 Gradient norm:       0.04  
+[09:13:31] < General >   Log likelihood (N=10692):  -9199.897 Gradient norm:      0.004  
+[09:13:31] < General >   Log likelihood (N=10692):  -9199.897 Gradient norm:      1e-05  
+[09:13:31] < General >   Log likelihood (N=10692):  -9199.897 Gradient norm:      1e-05 Hessian norm:       3e+03 BHHH norm:       4e+03
+[09:13:31] < General >   Results saved in file MNL2.html
+[09:13:31] < General >   Results saved in file MNL2.pickle
+[09:13:31] < General >   Log file created: MNL2.log
